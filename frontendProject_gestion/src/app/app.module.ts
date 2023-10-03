@@ -1,0 +1,27 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AppTareaComponent } from './appTarea.component';
+
+@NgModule({
+  declarations: [
+    AppTareaComponent,
+    AppComponent
+  ],
+  imports: [
+    ReactiveFormsModule,
+    FormsModule,
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  providers: [],
+  //bootstrap: [AppTareaComponent],
+  bootstrap: [AppComponent]
+
+})
+export class AppModule { }
+export class AppTareaModule { }

@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row text-center mt-5">
+      <div class="col">
+        <h2>GESTION TAREA</h2>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <label for="txtIdTarea" class="from-label">N.Tarea</label>
+        <input type="text" name="id" id="txtIdTarea" class="form-control" [(ngModel)]="tarea.idTarea" disabled="true">
+      </div>
+      <div class="col-md-4">
+        <label for="txtTitulo" class="from-label">Titulo</label>
+        <input type="text" name="id" id="txtTitulo" class="form-control" [(ngModel)]="tarea.titulo">
+      </div>
+      <div class="col-md-4">
+        <label for="txtDescripcion" class="from-label">Descripcion</label>
+        <input type="text" name="id" id="txtDescripcion" class="form-control" [(ngModel)]="tarea.descripcion">
+      </div>
+      <div class="col-md-4">
+        <label for="txtIdUsuario" class="from-label">ID</label>
+        <input type="text" name="id" id="txtIdUsuario" class="form-control" [(ngModel)]="tarea.idUsuario">
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <button class="btn btn-primary" type="button" (click)="onAddTarea(tarea)">Agregar</button>
+        <button class="btn btn-info rgb" type="button" (click)="onUpdateTarea(tarea)">Modificar</button>
+        <button class="btn btn-info rgb" type="button" (click)="onDeleteTarea(tarea.idTarea)">Eliminar</button>
+        <button class="btn btn-info rgb" type="button" (click)="clear()">Limpiar</button>
+      </div>
+    </div>
+  
+    <div class="row mt-5">
+      <div class="col">
+        <table id="dtTarea" class="table table-striped" style="width: 100%;">
+          <thead>
+            <tr>
+              <th>Seleccionar</th>
+              <th>N. Tarea</th>
+              <th>Titulo</th>
+              <th>Descripcion</th>
+              <th>Id Usuario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of datatable">
+              <td><input type="button" value="Seleccionar" (click)="onSetData(item)"></td>
+              <td> {{ item.idTarea }} </td>
+              <td>{{ item.titulo }}</td>
+              <td>{{ item.descripcion }}</td>
+              <td>{{ item.idUsuario }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

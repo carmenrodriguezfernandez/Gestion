@@ -1,0 +1,59 @@
+<div class="container">
+
+  <div class="row text-center mt-5">
+    <div class="col">
+      <h2>GESTION USUARIO</h2>
+    </div>
+  </div>
+  
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <label for="txtIdUsuario" class="from-label">Idenitficacion</label>
+      <input type="text" name="id" id="txtIdUsuario" class="form-control" [(ngModel)]="usuario.idUsuario" disabled="true">
+    </div>
+    <div class="col-md-4">
+      <label for="txtNombre" class="from-label">Nombre</label>
+      <input type="text" name="id" id="txtNombre" class="form-control" [(ngModel)]="usuario.nombre">
+    </div>
+    <div class="col-md-4">
+      <label for="txtCorreo" class="from-label">Correo</label>
+      <input type="text" name="id" id="txtCorreo" class="form-control" [(ngModel)]="usuario.correo">
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col">
+      <button class="btn btn-primary" type="button" (click)="onAddUsuario(usuario)">Agregar</button>
+      <button class="btn btn-info rgb" type="button" (click)="onUpdateUsuario(usuario)">Modificar</button>
+      <button class="btn btn-info rgb" type="button" (click)="onDeleteUsuario(usuario.idUsuario)">Eliminar</button>
+      <button class="btn btn-info rgb" type="button" (click)="clear()">Limpiar</button>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col">
+      <a target="_blank" class="fcc-btn"  [routerLink]="['/task']">Gestion Tarea</a>  
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col">
+      <table id="dtUsuario" class="table table-striped" style="width: 100%;">
+        <thead>
+          <tr>
+            <th>Seleccionar</th>
+            <th>Idenitficacion</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of datatable">
+            <td><input type="button" value="Seleccionar" (click)="onSetData(item)"></td>
+            <td> {{ item.idUsuario }} </td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.correo }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
