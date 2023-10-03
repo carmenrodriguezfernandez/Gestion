@@ -1,6 +1,7 @@
 # FrontendProjectGestion
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+Run `npm install` for create folder node module.
 
 ## Development server
 
